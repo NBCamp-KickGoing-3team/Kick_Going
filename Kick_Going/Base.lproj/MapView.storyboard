@@ -16,15 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-oP-xXQ">
-                                <rect key="frame" x="155" y="716" width="82" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QEb-oP-xXQ">
+                                <rect key="frame" x="155" y="670" width="82" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button1"/>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l2T-a9-3Wp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="QEb-oP-xXQ" firstAttribute="leading" secondItem="l2T-a9-3Wp" secondAttribute="leading" constant="155" id="8dH-s6-V1K"/>
+                            <constraint firstItem="l2T-a9-3Wp" firstAttribute="trailing" secondItem="QEb-oP-xXQ" secondAttribute="trailing" constant="156" id="CaK-sq-WKg"/>
+                            <constraint firstItem="l2T-a9-3Wp" firstAttribute="bottom" secondItem="QEb-oP-xXQ" secondAttribute="bottom" constant="113" id="TPM-1C-xlH"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="wfS-We-QOc"/>
                 </viewController>
