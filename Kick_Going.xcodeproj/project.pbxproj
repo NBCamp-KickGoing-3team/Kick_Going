@@ -19,6 +19,7 @@
 		C84459182B553F9D0013EE86 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84459172B553F9D0013EE86 /* MapViewController.swift */; };
 		C844591B2B553FF00013EE86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C844591A2B553FF00013EE86 /* RegisterViewController.swift */; };
 		C844591D2B5540880013EE86 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C844591C2B5540880013EE86 /* MyPageViewController.swift */; };
+		C8AD9A7E2B554E24002B48C3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AD9A7D2B554E24002B48C3 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C84459172B553F9D0013EE86 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C844591A2B553FF00013EE86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C844591C2B5540880013EE86 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		C8AD9A7D2B554E24002B48C3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		C84459192B553FA30013EE86 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C8AD9A7D2B554E24002B48C3 /* LoginViewController.swift */,
 				C84459172B553F9D0013EE86 /* MapViewController.swift */,
 				C844591A2B553FF00013EE86 /* RegisterViewController.swift */,
 				C844591C2B5540880013EE86 /* MyPageViewController.swift */,
@@ -183,6 +186,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8AD9A7E2B554E24002B48C3 /* LoginViewController.swift in Sources */,
 				C84458FC2B553CCD0013EE86 /* ViewController.swift in Sources */,
 				C844591D2B5540880013EE86 /* MyPageViewController.swift in Sources */,
 				C844591B2B553FF00013EE86 /* RegisterViewController.swift in Sources */,
