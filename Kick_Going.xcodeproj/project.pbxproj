@@ -13,6 +13,12 @@
 		C84458FF2B553CCD0013EE86 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84458FD2B553CCD0013EE86 /* Main.storyboard */; };
 		C84459012B553CCE0013EE86 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C84459002B553CCE0013EE86 /* Assets.xcassets */; };
 		C84459042B553CCE0013EE86 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84459022B553CCE0013EE86 /* LaunchScreen.storyboard */; };
+		C84459102B553DE60013EE86 /* MapView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C844590E2B553DE60013EE86 /* MapView.storyboard */; };
+		C84459132B553DFC0013EE86 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84459112B553DFC0013EE86 /* Register.storyboard */; };
+		C84459162B553E0E0013EE86 /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C84459142B553E0E0013EE86 /* MyPage.storyboard */; };
+		C84459182B553F9D0013EE86 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84459172B553F9D0013EE86 /* MapViewController.swift */; };
+		C844591B2B553FF00013EE86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C844591A2B553FF00013EE86 /* RegisterViewController.swift */; };
+		C844591D2B5540880013EE86 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C844591C2B5540880013EE86 /* MyPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		C84459002B553CCE0013EE86 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C84459032B553CCE0013EE86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C84459052B553CCE0013EE86 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C844590F2B553DE60013EE86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Kick_Going/Base.lproj/MapView.storyboard; sourceTree = "<group>"; };
+		C84459122B553DFC0013EE86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Kick_Going/Base.lproj/Register.storyboard; sourceTree = "<group>"; };
+		C84459152B553E0E0013EE86 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Kick_Going/Base.lproj/MyPage.storyboard; sourceTree = "<group>"; };
+		C84459172B553F9D0013EE86 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		C844591A2B553FF00013EE86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		C844591C2B5540880013EE86 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +52,12 @@
 		C84458EB2B553CCD0013EE86 = {
 			isa = PBXGroup;
 			children = (
+				C844590E2B553DE60013EE86 /* MapView.storyboard */,
+				C84459112B553DFC0013EE86 /* Register.storyboard */,
+				C84459142B553E0E0013EE86 /* MyPage.storyboard */,
+				C84459192B553FA30013EE86 /* Views */,
+				C8AD9A712B55443A002B48C3 /* Model */,
+				C8AD9A722B554446002B48C3 /* Extension */,
 				C84458F62B553CCD0013EE86 /* Kick_Going */,
 				C84458F52B553CCD0013EE86 /* Products */,
 			);
@@ -65,6 +83,30 @@
 				C84459052B553CCE0013EE86 /* Info.plist */,
 			);
 			path = Kick_Going;
+			sourceTree = "<group>";
+		};
+		C84459192B553FA30013EE86 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C84459172B553F9D0013EE86 /* MapViewController.swift */,
+				C844591A2B553FF00013EE86 /* RegisterViewController.swift */,
+				C844591C2B5540880013EE86 /* MyPageViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C8AD9A712B55443A002B48C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C8AD9A722B554446002B48C3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +168,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84459042B553CCE0013EE86 /* LaunchScreen.storyboard in Resources */,
+				C84459162B553E0E0013EE86 /* MyPage.storyboard in Resources */,
 				C84459012B553CCE0013EE86 /* Assets.xcassets in Resources */,
+				C84459102B553DE60013EE86 /* MapView.storyboard in Resources */,
 				C84458FF2B553CCD0013EE86 /* Main.storyboard in Resources */,
+				C84459132B553DFC0013EE86 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +184,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C84458FC2B553CCD0013EE86 /* ViewController.swift in Sources */,
+				C844591D2B5540880013EE86 /* MyPageViewController.swift in Sources */,
+				C844591B2B553FF00013EE86 /* RegisterViewController.swift in Sources */,
 				C84458F82B553CCD0013EE86 /* AppDelegate.swift in Sources */,
 				C84458FA2B553CCD0013EE86 /* SceneDelegate.swift in Sources */,
+				C84459182B553F9D0013EE86 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +209,30 @@
 				C84459032B553CCE0013EE86 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		C844590E2B553DE60013EE86 /* MapView.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C844590F2B553DE60013EE86 /* Base */,
+			);
+			name = MapView.storyboard;
+			sourceTree = "<group>";
+		};
+		C84459112B553DFC0013EE86 /* Register.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C84459122B553DFC0013EE86 /* Base */,
+			);
+			name = Register.storyboard;
+			sourceTree = "<group>";
+		};
+		C84459142B553E0E0013EE86 /* MyPage.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C84459152B553E0E0013EE86 /* Base */,
+			);
+			name = MyPage.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
