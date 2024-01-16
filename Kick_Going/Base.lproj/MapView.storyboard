@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4u-h3-eOx">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
@@ -54,6 +55,9 @@
                                             <imageReference key="image" image="scooter" catalog="system" symbolScale="large"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tappedButtonKickboard:" destination="M4u-h3-eOx" eventType="touchUpInside" id="jga-WW-39b"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV5-Tx-jm4">
                                         <rect key="frame" x="0.0" y="57.333333333333258" width="64" height="34.333333333333343"/>
@@ -61,6 +65,9 @@
                                         <buttonConfiguration key="configuration" style="plain" image="bicycle" catalog="system" title="">
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="tappedButtonBicycle:" destination="M4u-h3-eOx" eventType="touchUpInside" id="h0e-OQ-9dR"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,6 +96,15 @@
                                     <action selector="tappedCurrentLocation:" destination="M4u-h3-eOx" eventType="touchUpInside" id="k7D-yr-nRv"/>
                                 </connections>
                             </button>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rjq-cd-DDS">
+                                <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="M4u-h3-eOx" id="sd2-hp-ZZM"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="l2T-a9-3Wp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -119,6 +135,7 @@
                         <outlet property="buttonKickboard" destination="Cra-Ky-18h" id="NIa-0g-BDh"/>
                         <outlet property="currentLocation" destination="rYT-4w-vEO" id="mNR-n9-VKY"/>
                         <outlet property="kickboardMap" destination="3Jq-ez-qwE" id="b8s-ZU-S0d"/>
+                        <outlet property="searchBar" destination="rjq-cd-DDS" id="dRr-WL-p0Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xnn-Vi-0Gs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

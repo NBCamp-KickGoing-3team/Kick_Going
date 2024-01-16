@@ -18,6 +18,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var buttonBicycle: UIButton!
     @IBOutlet weak var currentLocation: UIButton!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    
     // MARK: - Properties
     let locationManager = CLLocationManager()
     
@@ -34,6 +37,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         kickboardMap.showsUserLocation = true
         
         kickboardMap.delegate = self
+//        searchBar.delegate = self
     }
     
     // MARK: - Methods
@@ -86,31 +90,61 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func tappedCurrentLocation(_ sender: Any) {
         //CLLocationManager() xcode에서 제공하는 위치매니저 매소드에서 startUpdatingLocation을 실행
         locationManager.startUpdatingLocation()
+        print("현재위치 버튼이 클릭되었습니다.")
     }
     
     @IBAction func tappedButtonBorrow(_ sender: UIButton) {
-        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-
-        }
+        print("대여하기 버튼이 클릭되었습니다.")
     }
     
-     // MARK: - Navigation
-
-}
-
-extension MapViewController: MKMapViewDelegate {
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        guard let annotaion = view.annotation else {
-            return
-        }
-        let latitude = annotaion.coordinate.latitude
-        let longitude = annotaion.coordinate.longitude
-        
-        let alertController = UIAlertController(title: "위치 정보", message: "선택한 위치의 좌표는 (\(latitude), \(longitude))입니다.", preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        
-        present(alertController, animated: true, completion: nil)
+    @IBAction func tappedButtonKickboard(_ sender: UIButton) {
+        print("킥보드 표시 버튼이 클릭되었습니다.")
     }
+    
+    @IBAction func tappedButtonBicycle(_ sender: UIButton) {
+        print("자전거 표시 버튼이 클릭되었습니다.")
+    }
+    
+    // MARK: - Navigation
+    
 }
+
+// 검색 기능 추가 구현 예정
+//extension MapViewController: UISearchBarDelegate {
+//    func setupSearchBar() {
+//        let searchBar = UISearchBar()
+//        searchBar.delegate = self
+//        searchBar.placeholder = "위치 검색"
+//        navigationItem.titleView = searchBar
+//    }
+//    
+//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+//        searchBar.resignFirstResponder()
+//        
+//        if let searchText = searchBar.text, !searchText.isEmpty {
+//            let geocoder = CLGeocoder()
+//            geocoder.geocodeAddressString(searchText) {
+//                (placemark, error) in
+//                if let error = error {
+//                    print("위치 검색 에러: \(error.localizedDescription)")
+//                    return
+//                }
+//                if let firstPlacemark = placemark?.first,
+//                   let location = firstPlacemark.location {
+//                    let latitude = location.coordinate.latitude
+//                    let longitude = location.coordinate.longitude
+//                    
+//                    let annotation = MKPointAnnotation()
+//                    annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+//                    annotation.title = firstPlacemark.name
+//                    annotation.subtitle = firstPlacemark.locality
+//                    
+//                    self.kickboardMap.addAnnotation(annotation)
+//                    self.goLocation(latitudeValue: latitude, longitudeValue: longitude, delta: 0.01)
+//                } else {
+//                    print("장소를 찾을 수 없음")
+//                }
+//            }
+//        }
+//    }
+//}
