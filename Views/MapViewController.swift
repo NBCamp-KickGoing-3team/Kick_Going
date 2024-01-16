@@ -6,24 +6,111 @@
 //
 
 import UIKit
+import MapKit
 
-class MapViewController: UIViewController {
-
+class MapViewController: UIViewController, CLLocationManagerDelegate {
+    
+    // MARK: - UI Properties
+    
+    @IBOutlet weak var kickboardMap: MKMapView!
+    @IBOutlet weak var buttonBarrow: UIButton!
+    @IBOutlet weak var buttonKickboard: UIButton!
+    @IBOutlet weak var buttonBicycle: UIButton!
+    @IBOutlet weak var currentLocation: UIButton!
+    
+    // MARK: - Properties
+    let locationManager = CLLocationManager()
+    
+    // MARK: - Life Cycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.startUpdatingLocation()
+        kickboardMap.showsUserLocation = true
+        
+        kickboardMap.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Methods
+    // 파라미터 : 위도, 경도, 범위로 원하는 위치 표시
+    func goLocation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span : Double) -> CLLocationCoordinate2D {
+        let toGoLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
+        let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
+        let toGoRegion = MKCoordinateRegion(center: toGoLocation, span: spanValue)
+        kickboardMap.setRegion(toGoRegion, animated: true)
+        
+        return toGoLocation // CLLocationCoordinate2DMake(latitudeValue, longitudeValue)을 호출
     }
-    */
+    
+    //locations.last 마지막 지점의 위,경도를 100배로 확대해서 표시
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let goToLocation = locations.last
+        //toGoLocation의 정보를 받아 위도, 경도, 범위를 주입
+        _ = goLocation(latitudeValue: (goToLocation?.coordinate.latitude)!, longitudeValue: (goToLocation?.coordinate.longitude)!, delta: 0.01)
+        
+        CLGeocoder().reverseGeocodeLocation(goToLocation!, completionHandler: {
+            (placemarks, error) -> Void in
+            let pm = placemarks!.first
+            let country = pm!.country
+            var address:String = country!
+            if pm!.locality != nil {
+                address += " "
+                address += pm!.locality!
+            }
+            if pm!.thoroughfare != nil {
+                address += " "
+                address += pm!.thoroughfare!
+            }
+            print(address)
+            //self.label1.text = "현재위치"
+            //self.label2.text = address
+        })
+        locationManager.stopUpdatingLocation()
+    }
+    //원하는 위도와 경도로 핀 설치
+    func setAnnotation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double, title strTitle: String, subtitle strSubtitle: String) {
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = goLocation(latitudeValue: latitudeValue, longitudeValue: longitudeValue, delta: span)
+        annotation.title = strTitle
+        annotation.subtitle = strSubtitle
+        kickboardMap.addAnnotation(annotation)
+    }
+    
+    // MARK: - Action Methods
+    
+    @IBAction func tappedCurrentLocation(_ sender: Any) {
+        //CLLocationManager() xcode에서 제공하는 위치매니저 매소드에서 startUpdatingLocation을 실행
+        locationManager.startUpdatingLocation()
+    }
+    
+    @IBAction func tappedButtonBorrow(_ sender: UIButton) {
+        func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
 
+        }
+    }
+    
+     // MARK: - Navigation
+
+}
+
+extension MapViewController: MKMapViewDelegate {
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let annotaion = view.annotation else {
+            return
+        }
+        let latitude = annotaion.coordinate.latitude
+        let longitude = annotaion.coordinate.longitude
+        
+        let alertController = UIAlertController(title: "위치 정보", message: "선택한 위치의 좌표는 (\(latitude), \(longitude))입니다.", preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        alertController.addAction(okAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
 }
