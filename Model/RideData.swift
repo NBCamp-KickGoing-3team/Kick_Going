@@ -7,10 +7,12 @@
 
 import Foundation
 
-struct KickboardData {
+struct RideData: Rideable {
     var id: Int
     var title : String
     var subtitle : String
     var latitude : Double
     var longitude : Double
 }
+
+
