@@ -21,14 +21,22 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var searchBar: UISearchBar!
     
     // MARK: - Properties
-    var dataSource: [KickboardData] = []
-    var KickboardItems: [KickboardData] = [
-        KickboardData(id: 0, title: "킥보드1", subtitle: "대여가능", latitude: 37.5665, longitude: 126.9774),
-        KickboardData(id: 1, title: "킥보드2", subtitle: "대여가능", latitude: 37.5660, longitude: 126.9805),
-        KickboardData(id: 2, title: "킥보드3", subtitle: "대여가능", latitude: 37.5640, longitude: 126.9791),
-        KickboardData(id: 3, title: "킥보드4", subtitle: "대여가능", latitude: 37.5658, longitude: 126.9818),
-        KickboardData(id: 4, title: "킥보드5", subtitle: "대여가능", latitude: 37.5647, longitude: 126.9768),
+    var dataSource: [RideData] = []
+    var kickboardItems: [RideData] = [
+        RideData(id: 0, title: "킥보드1", subtitle: "대여가능", latitude: 37.5665, longitude: 126.9774),
+        RideData(id: 1, title: "킥보드2", subtitle: "대여가능", latitude: 37.5660, longitude: 126.9805),
+        RideData(id: 2, title: "킥보드3", subtitle: "대여가능", latitude: 37.5640, longitude: 126.9791),
+        RideData(id: 3, title: "킥보드4", subtitle: "대여가능", latitude: 37.5658, longitude: 126.9818),
+        RideData(id: 4, title: "킥보드5", subtitle: "대여가능", latitude: 37.5647, longitude: 126.9768),
     ]
+    var bicycleItems: [RideData] = [
+        RideData(id: 0, title: "자전거1", subtitle: "대여가능", latitude: 37.5665, longitude: 126.9770),
+        RideData(id: 1, title: "자전거2", subtitle: "대여가능", latitude: 37.5662, longitude: 126.9801),
+        RideData(id: 2, title: "자전거3", subtitle: "대여가능", latitude: 37.5643, longitude: 126.9793),
+        RideData(id: 3, title: "자전거4", subtitle: "대여가능", latitude: 37.5655, longitude: 126.9815),
+        RideData(id: 4, title: "자전거5", subtitle: "대여가능", latitude: 37.5642, longitude: 126.9763),
+    ]
+    
     let locationManager = CLLocationManager()
     // MARK: - Life Cycle
     
@@ -44,7 +52,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         kickboardMap.delegate = self
         //        searchBar.delegate = self
-
+        
     }
     
     // MARK: - Methods
@@ -95,7 +103,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func tappedButtonKickboard(_ sender: UIButton) {
         print("킥보드 표시 버튼이 클릭되었습니다.")
-        let dataSource = KickboardItems
+        
+        removeAnnotationsFromMap()
+        
+        let dataSource = kickboardItems
         for kickboard in dataSource {
             setAnnotation(title: kickboard.title, subtitle: kickboard.subtitle, latitudeValue: kickboard.latitude, longitudeValue: kickboard.longitude, delta: 0.01)
         }
@@ -103,6 +114,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     @IBAction func tappedButtonBicycle(_ sender: UIButton) {
         print("자전거 표시 버튼이 클릭되었습니다.")
+        
+        removeAnnotationsFromMap()
+        
+        let dataSource = bicycleItems
+        for bicycle in dataSource {
+            setAnnotation(title: bicycle.title, subtitle: bicycle.subtitle, latitudeValue: bicycle.latitude, longitudeValue: bicycle.longitude, delta: 0.01)
+        }
     }
     
     // MARK: - Navigation
