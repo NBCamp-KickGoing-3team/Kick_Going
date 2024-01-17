@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController, CLLocationManagerDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
     
     // MARK: - UI Properties
     
@@ -20,10 +20,16 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var searchBar: UISearchBar!
     
-    
     // MARK: - Properties
+    var dataSource: [KickboardData] = []
+    var KickboardItems: [KickboardData] = [
+        KickboardData(id: 0, title: "킥보드1", subtitle: "대여가능", latitude: 37.5665, longitude: 126.9774),
+        KickboardData(id: 1, title: "킥보드2", subtitle: "대여가능", latitude: 37.5660, longitude: 126.9805),
+        KickboardData(id: 2, title: "킥보드3", subtitle: "대여가능", latitude: 37.5640, longitude: 126.9791),
+        KickboardData(id: 3, title: "킥보드4", subtitle: "대여가능", latitude: 37.5658, longitude: 126.9818),
+        KickboardData(id: 4, title: "킥보드5", subtitle: "대여가능", latitude: 37.5647, longitude: 126.9768),
+    ]
     let locationManager = CLLocationManager()
-    
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -37,7 +43,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         kickboardMap.showsUserLocation = true
         
         kickboardMap.delegate = self
-//        searchBar.delegate = self
+        //        searchBar.delegate = self
+
     }
     
     // MARK: - Methods
@@ -71,20 +78,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 address += pm!.thoroughfare!
             }
             print(address)
-            //self.label1.text = "현재위치"
-            //self.label2.text = address
         })
         locationManager.stopUpdatingLocation()
     }
-    //원하는 위도와 경도로 핀 설치
-    func setAnnotation(latitudeValue: CLLocationDegrees, longitudeValue: CLLocationDegrees, delta span: Double, title strTitle: String, subtitle strSubtitle: String) {
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = goLocation(latitudeValue: latitudeValue, longitudeValue: longitudeValue, delta: span)
-        annotation.title = strTitle
-        annotation.subtitle = strSubtitle
-        kickboardMap.addAnnotation(annotation)
-    }
-    
     // MARK: - Action Methods
     
     @IBAction func tappedCurrentLocation(_ sender: Any) {
@@ -99,6 +95,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func tappedButtonKickboard(_ sender: UIButton) {
         print("킥보드 표시 버튼이 클릭되었습니다.")
+        let dataSource = KickboardItems
+        for kickboard in dataSource {
+            setAnnotation(title: kickboard.title, subtitle: kickboard.subtitle, latitudeValue: kickboard.latitude, longitudeValue: kickboard.longitude, delta: 0.01)
+        }
     }
     
     @IBAction func tappedButtonBicycle(_ sender: UIButton) {
@@ -117,10 +117,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 //        searchBar.placeholder = "위치 검색"
 //        navigationItem.titleView = searchBar
 //    }
-//    
+//
 //    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 //        searchBar.resignFirstResponder()
-//        
+//
 //        if let searchText = searchBar.text, !searchText.isEmpty {
 //            let geocoder = CLGeocoder()
 //            geocoder.geocodeAddressString(searchText) {
@@ -133,12 +133,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
 //                   let location = firstPlacemark.location {
 //                    let latitude = location.coordinate.latitude
 //                    let longitude = location.coordinate.longitude
-//                    
+//
 //                    let annotation = MKPointAnnotation()
 //                    annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
 //                    annotation.title = firstPlacemark.name
 //                    annotation.subtitle = firstPlacemark.locality
-//                    
+//
 //                    self.kickboardMap.addAnnotation(annotation)
 //                    self.goLocation(latitudeValue: latitude, longitudeValue: longitude, delta: 0.01)
 //                } else {
