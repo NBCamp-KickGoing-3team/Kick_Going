@@ -5,11 +5,25 @@
 //  Created by Jason Yang on 1/15/24.
 //
 
+// MARK: - 델리게이트 프로토콜 (데이터 전달용)
+
+protocol RegistrationDelegate: AnyObject {
+    func didRegisterKickboard(name: String, number: String, latitude: Double, longitude: Double)
+}
+
 import UIKit
+
 class RegisterViewController: UIViewController {
     
+    // MARK: - 델리게이트 프로토콜 (데이터 전달용)
+    weak var registrationDelegate: RegistrationDelegate?
+    
     private lazy var registerButton: UIButton = {
+        
+        // MARK: - UI Properties
+        
         let button = UIButton()
+        
         button.setTitle("킥보드 등록", for: .normal)
         button.backgroundColor = .green
         button.layer.cornerRadius = 10
@@ -20,6 +34,8 @@ class RegisterViewController: UIViewController {
         return button
     }()
 
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,9 +50,13 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // MARK: - @objc
+    
     @objc private func registerButtonTapped() {
         showRegisterAlert()
     }
+    
+    // MARK: - Alert Presentaion
     
     private func showRegisterAlert() {
         let alertController = UIAlertController(title: "킥보드 등록", message: nil, preferredStyle: .alert)
@@ -81,7 +101,10 @@ class RegisterViewController: UIViewController {
         present(alertController, animated: true, completion: nil)
     }
     
+    // MARK: - 데이터 전달시 델리게이트 호출
+    
     private func handleRegistration(name: String, number: String, latitude: Double, longitude: Double) {
+        registrationDelegate?.didRegisterKickboard(name: name, number: number, latitude: latitude, longitude: longitude)
         // 입력된 데이터를 바탕으로 킥보드 위치 생성 함수
         // MapViewController에 킥보드 정보를 전달하고 지도에 마커를 추가하는 기능 등
     }
