@@ -12,7 +12,9 @@ class RegisterViewController: UIViewController {
         let button = UIButton()
         button.setTitle("킥보드 등록", for: .normal)
         button.backgroundColor = .green
-        button.layer.cornerRadius = button.frame.height / 2
+        button.layer.cornerRadius = 10
+        button.layer.borderWidth = 1.0
+        button.layer.borderColor = UIColor.black.cgColor
         button.clipsToBounds = true
         button.addTarget(self, action: #selector(registerButtonTapped), for: .touchUpInside)
         return button
@@ -22,20 +24,19 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(registerButton)
+        registerButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            registerButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            registerButton.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            registerButton.widthAnchor.constraint(equalToConstant: 200),
+            registerButton.heightAnchor.constraint(equalToConstant: 50)
+        ])
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        registerButton.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
-        registerButton.center = view.center
-        registerButton.layer.cornerRadius = 10
+    @objc private func registerButtonTapped() {
+        showRegisterAlert()
     }
-    
-//    @objc private func registerButtonTapped() {
-//        showRegisterAlert()
-//    }
     
     private func showRegisterAlert() {
         let alertController = UIAlertController(title: "킥보드 등록", message: nil, preferredStyle: .alert)
