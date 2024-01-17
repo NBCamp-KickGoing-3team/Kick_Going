@@ -21,6 +21,12 @@ class MemberStore {
     
     // MARK: - Public Methods
     
+    //김가빈 수정 시작
+    func setCurrentLoggedInMember(_ member: Member) {
+            self.currentLoggedInMember = member
+        }
+    //김가빈 수정 끝
+    
     func isEmailRegistered(_ email: String) -> Bool {
         return members.contains { $0.email == email }
     }
@@ -49,6 +55,11 @@ class MemberStore {
     func getCurrentLoggedInMember() -> Member? {
         return currentLoggedInMember
     }
+    
+    func login(member: Member) {
+        currentLoggedInMember = member
+    }
+
     
     // MARK: - Private Methods
     

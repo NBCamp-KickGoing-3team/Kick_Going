@@ -122,9 +122,15 @@ class LoginViewController: UIViewController {
     
     // MARK: - Login Handling
     
+    //김가빈 수정
     func performLogin(for member: Member) throws {
         showNextPage(segueIdentifier: "showTabBarController")
+        // 로그인 성공 후 MemberStore의 currentLoggedInMember 업데이트
+            MemberStore.shared.setCurrentLoggedInMember(member)
+        // 다음 화면으로 이동하는 로직
+            showNextPage(segueIdentifier: "showTabBarController")
     }
+    //김가빈 수정 끝
 
     func handleLoginAction(alertController: UIAlertController) {
         guard let email = alertController.textFields?[0].text,
