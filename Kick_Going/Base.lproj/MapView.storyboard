@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M4u-h3-eOx">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Map view configurations" minToolsVersion="14.0"/>
@@ -134,7 +133,7 @@
                         <outlet property="buttonBicycle" destination="fV5-Tx-jm4" id="nyB-SA-n89"/>
                         <outlet property="buttonKickboard" destination="Cra-Ky-18h" id="NIa-0g-BDh"/>
                         <outlet property="currentLocation" destination="rYT-4w-vEO" id="mNR-n9-VKY"/>
-                        <outlet property="kickboardMap" destination="3Jq-ez-qwE" id="b8s-ZU-S0d"/>
+                        <outlet property="kickGoingMap" destination="3Jq-ez-qwE" id="b8s-ZU-S0d"/>
                         <outlet property="searchBar" destination="rjq-cd-DDS" id="dRr-WL-p0Y"/>
                     </connections>
                 </viewController>

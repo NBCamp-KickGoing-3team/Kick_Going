@@ -9,9 +9,8 @@ import Foundation
 
 protocol Rideable {
     var id: Int { get set }
-    var title : String { get set }
-    var subtitle : String { get set }
-    var latitude : Double { get set }
-    var longitude : Double { get set }
-    
+    var title: String { get set }
+    var subtitle: String { get set }
+    var latitude: Double { get set }
+    var longitude: Double { get set }
 }

@@ -14,12 +14,10 @@ extension MapViewController {
         annotation.coordinate = goLocation(latitudeValue: latitudeValue, longitudeValue: longitudeValue, delta: span)
         annotation.title = strTitle
         annotation.subtitle = strSubtitle
-        kickboardMap.addAnnotation(annotation)
+        kickGoingMap.addAnnotation(annotation)
     }
-    //원하는 위도와 경도에서 핀 설치
     func removeAnnotationsFromMap() {
-        let annotations = kickboardMap.annotations
-        kickboardMap.removeAnnotations(annotations)
+        let annotations = kickGoingMap.annotations
+        kickGoingMap.removeAnnotations(annotations)
     }
 }
-
