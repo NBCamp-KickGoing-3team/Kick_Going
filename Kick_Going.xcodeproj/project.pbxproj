@@ -10,6 +10,8 @@
 		2B4D72D02B56206D0084BF2A /* MemberStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72CF2B56206D0084BF2A /* MemberStore.swift */; };
 		2B4D72D22B56B27C0084BF2A /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72D12B56B27C0084BF2A /* Member.swift */; };
 		2B4D72D42B56B29A0084BF2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72D32B56B29A0084BF2A /* Constants.swift */; };
+		2B4D72DF2B58B7170084BF2A /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72DE2B58B7170084BF2A /* CustomerViewController.swift */; };
+		2B4D72E12B58C0050084BF2A /* Customer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D72E02B58C0050084BF2A /* Customer.storyboard */; };
 		C826156C2B57E1520041463B /* Rideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C826156B2B57E1520041463B /* Rideable.swift */; };
 		C84458F82B553CCD0013EE86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84458F72B553CCD0013EE86 /* AppDelegate.swift */; };
 		C84458FA2B553CCD0013EE86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84458F92B553CCD0013EE86 /* SceneDelegate.swift */; };
@@ -34,6 +36,8 @@
 		2B4D72CF2B56206D0084BF2A /* MemberStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberStore.swift; sourceTree = SOURCE_ROOT; };
 		2B4D72D12B56B27C0084BF2A /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = SOURCE_ROOT; };
 		2B4D72D32B56B29A0084BF2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
+		2B4D72DE2B58B7170084BF2A /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
+		2B4D72E02B58C0050084BF2A /* Customer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Customer.storyboard; sourceTree = "<group>"; };
 		C826156B2B57E1520041463B /* Rideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rideable.swift; sourceTree = "<group>"; };
 		C84458F42B553CCD0013EE86 /* Kick_Going.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kick_Going.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84458F72B553CCD0013EE86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -72,6 +76,7 @@
 			children = (
 				C844590E2B553DE60013EE86 /* MapView.storyboard */,
 				C84459112B553DFC0013EE86 /* Register.storyboard */,
+				2B4D72E02B58C0050084BF2A /* Customer.storyboard */,
 				C84459142B553E0E0013EE86 /* MyPage.storyboard */,
 				C84459192B553FA30013EE86 /* Views */,
 				C8AD9A712B55443A002B48C3 /* Model */,
@@ -110,6 +115,7 @@
 				C84459172B553F9D0013EE86 /* MapViewController.swift */,
 				C844591A2B553FF00013EE86 /* RegisterViewController.swift */,
 				C844591C2B5540880013EE86 /* MyPageViewController.swift */,
+				2B4D72DE2B58B7170084BF2A /* CustomerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +205,7 @@
 				C84459012B553CCE0013EE86 /* Assets.xcassets in Resources */,
 				C84459102B553DE60013EE86 /* MapView.storyboard in Resources */,
 				C84458FF2B553CCD0013EE86 /* Main.storyboard in Resources */,
+				2B4D72E12B58C0050084BF2A /* Customer.storyboard in Resources */,
 				C84459132B553DFC0013EE86 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -218,6 +225,7 @@
 				2B4D72D42B56B29A0084BF2A /* Constants.swift in Sources */,
 				C84458F82B553CCD0013EE86 /* AppDelegate.swift in Sources */,
 				C889AFEB2B57AE3C00527A89 /* MKMapView.swift in Sources */,
+				2B4D72DF2B58B7170084BF2A /* CustomerViewController.swift in Sources */,
 				C826156C2B57E1520041463B /* Rideable.swift in Sources */,
 				C84458FA2B553CCD0013EE86 /* SceneDelegate.swift in Sources */,
 				C889AFE72B57A86D00527A89 /* RideData.swift in Sources */,
