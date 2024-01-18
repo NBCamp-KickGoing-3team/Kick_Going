@@ -15,7 +15,7 @@ struct RegisteredKickboard {
 
 class MyPageViewController: UIViewController, UITableViewDataSource {
     
-    var tableView: UITableView! // 암시적으로 언래핑된 옵셔널로 선언
+    var tableView: UITableView!
     var usageHistories: [KickboardUsageHistory] = []
     var registeredKickboards: [RegisteredKickboard] = []
     var currentUserEmail: String?
@@ -27,6 +27,7 @@ class MyPageViewController: UIViewController, UITableViewDataSource {
     let usageHistoryLabel = UILabel()
     let registeredKickboardLabel = UILabel()
     let logoutButton = UIButton(type: .system)
+//    let registerKickboardButton = UIButton(type: .system)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,11 +36,26 @@ class MyPageViewController: UIViewController, UITableViewDataSource {
         if let loggedInMember = MemberStore.shared.getCurrentLoggedInMember() {
             currentUserEmail = loggedInMember.email
         }
-        
         setupUI()
         setupTableView()
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.registeredKickboards = DataStore.shared.getKickboards()
+        self.tableView.reloadData()
+    }
+    
+    func updateDataSource() {
+        self.registeredKickboards = DataStore.shared.kickboards
+    }
+    
+    @objc func registerKickboardButtonTapped() {
+        let registerVC = RegisterViewController()
+        registerVC.registrationDelegate = self
+        present(registerVC, animated: true, completion: nil)
+    }
+    
     func setupUI() {
         // 전체 뷰의 배경색 설정
         view.backgroundColor = .white
@@ -70,7 +86,12 @@ class MyPageViewController: UIViewController, UITableViewDataSource {
         logoutButton.setTitle("LogOut", for: .normal)
         logoutButton.addTarget(self, action: #selector(logoutButtonTapped), for: .touchUpInside)
         
+//        // "킥보드 등록" 버튼 설정
+//        registeredKickboardLabel.setTitle("킥보드 등록", for: .normal)
+//        registeredKickboardLabel.addTarget(self, action: #selector(registerKickboardButtonTapped), for: .touchUpInside)
+        
         // 뷰에 추가
+//        view.addSubview(registerKickboardButton)
         view.addSubview(backButton)
         view.addSubview(userIdLabel)
         view.addSubview(statusLabel)
@@ -81,7 +102,7 @@ class MyPageViewController: UIViewController, UITableViewDataSource {
         setupConstraints()
     }
     
-   
+    
     
     func setupTableView() {
         tableView = UITableView(frame: .zero, style: .plain)
@@ -144,6 +165,15 @@ class MyPageViewController: UIViewController, UITableViewDataSource {
             registeredKickboardLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             registeredKickboardLabel.heightAnchor.constraint(equalToConstant: 40)
         ])
+        
+//        // "킥보드 등록" 버튼 제약 조건
+//        registerKickboardButton.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            registerKickboardButton.topAnchor.constraint(equalTo: registeredKickboardLabel.bottomAnchor, constant: 20),
+//            registerKickboardButton.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            registerKickboardButton.widthAnchor.constraint(equalToConstant: 200),
+//            registerKickboardButton.heightAnchor.constraint(equalToConstant: 50)
+//        ])
         
         // logoutButton 제약 조건
         logoutButton.translatesAutoresizingMaskIntoConstraints = false
@@ -230,3 +260,12 @@ class MyPageViewController: UIViewController, UITableViewDataSource {
     }
 }
 
+// MARK: - RegistrationDelegate
+
+extension MyPageViewController: RegistrationDelegate {
+    func didRegisterKickboard(name: String, number: String, latitude: Double, longitude: Double) {
+        let newKickboard = RegisteredKickboard(name: name, number: number)
+        self.registeredKickboards.append(newKickboard)
+        self.tableView.reloadData()
+    }
+}
