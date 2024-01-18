@@ -9,10 +9,12 @@ import UIKit
 import MapKit
 
 class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+    // MARK: - 델리게이트 프로토콜
+    weak var registrationDelegate: RegistrationDelegate?
     
     // MARK: - UI Properties
     
-    @IBOutlet weak var kickboardMap: MKMapView!
+    @IBOutlet weak var kickGoingMap: MKMapView!
     @IBOutlet weak var buttonBarrow: UIButton!
     @IBOutlet weak var buttonKickboard: UIButton!
     @IBOutlet weak var buttonBicycle: UIButton!
@@ -24,10 +26,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var dataSource: [RideData] = []
     var kickboardItems: [RideData] = [
         RideData(id: 0, title: "킥보드1", subtitle: "대여가능", latitude: 37.5665, longitude: 126.9774),
-        RideData(id: 1, title: "킥보드2", subtitle: "대여가능", latitude: 37.5660, longitude: 126.9805),
+        RideData(id: 1, title: "킥보드2", subtitle: "대여 중", latitude: 37.5660, longitude: 126.9805),
         RideData(id: 2, title: "킥보드3", subtitle: "대여가능", latitude: 37.5640, longitude: 126.9791),
         RideData(id: 3, title: "킥보드4", subtitle: "대여가능", latitude: 37.5658, longitude: 126.9818),
-        RideData(id: 4, title: "킥보드5", subtitle: "대여가능", latitude: 37.5647, longitude: 126.9768),
+        RideData(id: 4, title: "킥보드5", subtitle: "대여 중", latitude: 37.5647, longitude: 126.9768),
     ]
     var bicycleItems: [RideData] = [
         RideData(id: 0, title: "자전거1", subtitle: "대여가능", latitude: 37.5665, longitude: 126.9770),
@@ -38,6 +40,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     ]
     
     let locationManager = CLLocationManager()
+    
+    var selectedKickboardID: Int?
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -48,11 +52,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
-        kickboardMap.showsUserLocation = true
-        
-        kickboardMap.delegate = self
-        //        searchBar.delegate = self
-        
+        kickGoingMap.showsUserLocation = true
+        kickGoingMap.delegate = self
     }
     
     // MARK: - Methods
@@ -61,7 +62,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         let toGoLocation = CLLocationCoordinate2DMake(latitudeValue, longitudeValue)
         let spanValue = MKCoordinateSpan(latitudeDelta: span, longitudeDelta: span)
         let toGoRegion = MKCoordinateRegion(center: toGoLocation, span: spanValue)
-        kickboardMap.setRegion(toGoRegion, animated: true)
+        kickGoingMap.setRegion(toGoRegion, animated: true)
         
         return toGoLocation // CLLocationCoordinate2DMake(latitudeValue, longitudeValue)을 호출
     }
@@ -94,15 +95,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBAction func tappedCurrentLocation(_ sender: Any) {
         //CLLocationManager() xcode에서 제공하는 위치매니저 매소드에서 startUpdatingLocation을 실행
         locationManager.startUpdatingLocation()
-        print("현재위치 버튼이 클릭되었습니다.")
+        print("현재위치 버튼이 탭 되었습니다.")
     }
     
     @IBAction func tappedButtonBorrow(_ sender: UIButton) {
-        print("대여하기 버튼이 클릭되었습니다.")
+        
+        guard let selectedID = selectedKickboardID else {
+            alertButton(in: self, title: "선택된 킥보드가 없습니다." , messgae: "대여를 원하신다면 '예'를 눌러주세요.")
+            return
+        }
+        
+        if let kickboardToBorrow = kickboardItems.first(where: {$0.id == selectedID}) {
+            if kickboardToBorrow.subtitle == "대여가능" {
+                print("대여하기가 신청 되었습니다.")
+                //alertButton(in: self, title: "대여하시겠습니까?", messgae: "대여를 원하신다면 '예'를 눌러주세요.")
+                showMyViewControllerInACustomizedSheet()
+            } else {
+                alertButton(in: self, title: "이미 대여 중인 킥보드입니다.", messgae: "대여를 원하신다면 '예'를 눌러주세요.")
+                
+            }
+        }
     }
     
     @IBAction func tappedButtonKickboard(_ sender: UIButton) {
-        print("킥보드 표시 버튼이 클릭되었습니다.")
+        print("킥보드 표시 버튼이 탭 되었습니다.")
         
         removeAnnotationsFromMap()
         
@@ -110,6 +126,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         for kickboard in dataSource {
             setAnnotation(title: kickboard.title, subtitle: kickboard.subtitle, latitudeValue: kickboard.latitude, longitudeValue: kickboard.longitude, delta: 0.01)
         }
+        locationManager.stopUpdatingLocation()
     }
     
     @IBAction func tappedButtonBicycle(_ sender: UIButton) {
@@ -121,48 +138,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         for bicycle in dataSource {
             setAnnotation(title: bicycle.title, subtitle: bicycle.subtitle, latitudeValue: bicycle.latitude, longitudeValue: bicycle.longitude, delta: 0.01)
         }
+        locationManager.stopUpdatingLocation()
     }
-    
-    // MARK: - Navigation
-    
 }
-
-// 검색 기능 추가 구현 예정
-//extension MapViewController: UISearchBarDelegate {
-//    func setupSearchBar() {
-//        let searchBar = UISearchBar()
-//        searchBar.delegate = self
-//        searchBar.placeholder = "위치 검색"
-//        navigationItem.titleView = searchBar
-//    }
-//
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        searchBar.resignFirstResponder()
-//
-//        if let searchText = searchBar.text, !searchText.isEmpty {
-//            let geocoder = CLGeocoder()
-//            geocoder.geocodeAddressString(searchText) {
-//                (placemark, error) in
-//                if let error = error {
-//                    print("위치 검색 에러: \(error.localizedDescription)")
-//                    return
-//                }
-//                if let firstPlacemark = placemark?.first,
-//                   let location = firstPlacemark.location {
-//                    let latitude = location.coordinate.latitude
-//                    let longitude = location.coordinate.longitude
-//
-//                    let annotation = MKPointAnnotation()
-//                    annotation.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-//                    annotation.title = firstPlacemark.name
-//                    annotation.subtitle = firstPlacemark.locality
-//
-//                    self.kickboardMap.addAnnotation(annotation)
-//                    self.goLocation(latitudeValue: latitude, longitudeValue: longitude, delta: 0.01)
-//                } else {
-//                    print("장소를 찾을 수 없음")
-//                }
-//            }
-//        }
-//    }
-//}
