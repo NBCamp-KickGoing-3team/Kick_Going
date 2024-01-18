@@ -108,9 +108,11 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         if let kickboardToBorrow = kickboardItems.first(where: {$0.id == selectedID}) {
             if kickboardToBorrow.subtitle == "대여가능" {
                 print("대여하기가 신청 되었습니다.")
-                alertButton(in: self, title: "대여하시겠습니까?", messgae: "대여를 원하신다면 '예'를 눌러주세요.")
+                //alertButton(in: self, title: "대여하시겠습니까?", messgae: "대여를 원하신다면 '예'를 눌러주세요.")
+                showMyViewControllerInACustomizedSheet()
             } else {
                 alertButton(in: self, title: "이미 대여 중인 킥보드입니다.", messgae: "대여를 원하신다면 '예'를 눌러주세요.")
+                
             }
         }
     }
