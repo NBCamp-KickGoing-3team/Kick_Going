@@ -23,9 +23,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="785"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmr-Yj-uSc" userLabel="buttonBarrow">
-                                <rect key="frame" x="16" y="706" width="361" height="66"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmr-Yj-uSc" userLabel="buttonBarrow">
+                                <rect key="frame" x="16" y="696" width="361" height="66"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="361" id="hz0-sR-NAx"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="66" id="owp-h6-3wm"/>
@@ -46,7 +46,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="23" translatesAutoresizingMaskIntoConstraints="NO" id="51j-P0-K6e">
-                                <rect key="frame" x="303" y="564.33333333333337" width="64" height="91.666666666666629"/>
+                                <rect key="frame" x="303" y="554.33333333333337" width="64" height="91.666666666666629"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cra-Ky-18h">
                                         <rect key="frame" x="0.0" y="0.0" width="64" height="34.333333333333336"/>
@@ -86,7 +86,7 @@
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rYT-4w-vEO">
-                                <rect key="frame" x="303" y="663" width="64" height="34.333333333333371"/>
+                                <rect key="frame" x="303" y="653" width="64" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="">
                                     <imageReference key="image" image="location.circle" catalog="system" symbolScale="large"/>
@@ -109,7 +109,7 @@
                         <viewLayoutGuide key="safeArea" id="l2T-a9-3Wp"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gmr-Yj-uSc" firstAttribute="bottom" secondItem="3Jq-ez-qwE" secondAttribute="bottom" id="4ys-M2-gMz"/>
+                            <constraint firstItem="gmr-Yj-uSc" firstAttribute="bottom" secondItem="3Jq-ez-qwE" secondAttribute="bottom" constant="-10" id="4ys-M2-gMz"/>
                             <constraint firstItem="rYT-4w-vEO" firstAttribute="leading" secondItem="MPI-fn-vba" secondAttribute="leadingMargin" constant="287" id="5Sa-ga-pOz"/>
                             <constraint firstItem="gmr-Yj-uSc" firstAttribute="trailing" secondItem="MPI-fn-vba" secondAttribute="trailingMargin" id="7TF-xR-EPU"/>
                             <constraint firstItem="gmr-Yj-uSc" firstAttribute="centerX" secondItem="MPI-fn-vba" secondAttribute="centerX" id="AqY-pN-oVn"/>
@@ -134,7 +134,7 @@
                         <outlet property="buttonBicycle" destination="fV5-Tx-jm4" id="nyB-SA-n89"/>
                         <outlet property="buttonKickboard" destination="Cra-Ky-18h" id="NIa-0g-BDh"/>
                         <outlet property="currentLocation" destination="rYT-4w-vEO" id="mNR-n9-VKY"/>
-                        <outlet property="kickboardMap" destination="3Jq-ez-qwE" id="b8s-ZU-S0d"/>
+                        <outlet property="kickGoingMap" destination="3Jq-ez-qwE" id="b8s-ZU-S0d"/>
                         <outlet property="searchBar" destination="rjq-cd-DDS" id="dRr-WL-p0Y"/>
                     </connections>
                 </viewController>
@@ -149,6 +149,9 @@
         <image name="scooter" catalog="system" width="128" height="94"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

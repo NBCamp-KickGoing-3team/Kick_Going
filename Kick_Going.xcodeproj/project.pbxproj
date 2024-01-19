@@ -10,7 +10,11 @@
 		2B4D72D02B56206D0084BF2A /* MemberStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72CF2B56206D0084BF2A /* MemberStore.swift */; };
 		2B4D72D22B56B27C0084BF2A /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72D12B56B27C0084BF2A /* Member.swift */; };
 		2B4D72D42B56B29A0084BF2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72D32B56B29A0084BF2A /* Constants.swift */; };
+		2B4D72DF2B58B7170084BF2A /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72DE2B58B7170084BF2A /* CustomerViewController.swift */; };
+		2B4D72E12B58C0050084BF2A /* Customer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D72E02B58C0050084BF2A /* Customer.storyboard */; };
 		C826156C2B57E1520041463B /* Rideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C826156B2B57E1520041463B /* Rideable.swift */; };
+		C83B71D12B59E85E00A14813 /* FindRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83B71D02B59E85E00A14813 /* FindRoute.swift */; };
+		C83DDD852B58BB8200D5E794 /* setupSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83DDD842B58BB8200D5E794 /* setupSearchBar.swift */; };
 		C84458F82B553CCD0013EE86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84458F72B553CCD0013EE86 /* AppDelegate.swift */; };
 		C84458FA2B553CCD0013EE86 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84458F92B553CCD0013EE86 /* SceneDelegate.swift */; };
 		C84458FC2B553CCD0013EE86 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84458FB2B553CCD0013EE86 /* ViewController.swift */; };
@@ -23,6 +27,8 @@
 		C84459182B553F9D0013EE86 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84459172B553F9D0013EE86 /* MapViewController.swift */; };
 		C844591B2B553FF00013EE86 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C844591A2B553FF00013EE86 /* RegisterViewController.swift */; };
 		C844591D2B5540880013EE86 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C844591C2B5540880013EE86 /* MyPageViewController.swift */; };
+		C85CA5922B58FF3000B16D37 /* alertButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85CA5912B58FF3000B16D37 /* alertButton.swift */; };
+		C85CA5942B59133200B16D37 /* halfModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85CA5932B59133200B16D37 /* halfModal.swift */; };
 		C889AFE52B568A3900527A89 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C889AFE42B568A3900527A89 /* MapView.swift */; };
 		C889AFE72B57A86D00527A89 /* RideData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C889AFE62B57A86D00527A89 /* RideData.swift */; };
 		C889AFE92B57A92700527A89 /* setAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C889AFE82B57A92700527A89 /* setAnnotation.swift */; };
@@ -34,7 +40,11 @@
 		2B4D72CF2B56206D0084BF2A /* MemberStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberStore.swift; sourceTree = SOURCE_ROOT; };
 		2B4D72D12B56B27C0084BF2A /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = SOURCE_ROOT; };
 		2B4D72D32B56B29A0084BF2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
+		2B4D72DE2B58B7170084BF2A /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
+		2B4D72E02B58C0050084BF2A /* Customer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Customer.storyboard; sourceTree = "<group>"; };
 		C826156B2B57E1520041463B /* Rideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rideable.swift; sourceTree = "<group>"; };
+		C83B71D02B59E85E00A14813 /* FindRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindRoute.swift; sourceTree = "<group>"; };
+		C83DDD842B58BB8200D5E794 /* setupSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupSearchBar.swift; sourceTree = "<group>"; };
 		C84458F42B553CCD0013EE86 /* Kick_Going.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kick_Going.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C84458F72B553CCD0013EE86 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C84458F92B553CCD0013EE86 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +59,8 @@
 		C84459172B553F9D0013EE86 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		C844591A2B553FF00013EE86 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		C844591C2B5540880013EE86 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		C85CA5912B58FF3000B16D37 /* alertButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertButton.swift; sourceTree = "<group>"; };
+		C85CA5932B59133200B16D37 /* halfModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = halfModal.swift; sourceTree = "<group>"; };
 		C889AFE42B568A3900527A89 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		C889AFE62B57A86D00527A89 /* RideData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideData.swift; sourceTree = "<group>"; };
 		C889AFE82B57A92700527A89 /* setAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setAnnotation.swift; sourceTree = "<group>"; };
@@ -72,6 +84,7 @@
 			children = (
 				C844590E2B553DE60013EE86 /* MapView.storyboard */,
 				C84459112B553DFC0013EE86 /* Register.storyboard */,
+				2B4D72E02B58C0050084BF2A /* Customer.storyboard */,
 				C84459142B553E0E0013EE86 /* MyPage.storyboard */,
 				C84459192B553FA30013EE86 /* Views */,
 				C8AD9A712B55443A002B48C3 /* Model */,
@@ -110,6 +123,7 @@
 				C84459172B553F9D0013EE86 /* MapViewController.swift */,
 				C844591A2B553FF00013EE86 /* RegisterViewController.swift */,
 				C844591C2B5540880013EE86 /* MyPageViewController.swift */,
+				2B4D72DE2B58B7170084BF2A /* CustomerViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -118,10 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				C889AFE62B57A86D00527A89 /* RideData.swift */,
-				2B4D72CF2B56206D0084BF2A /* MemberStore.swift */,
-				2B4D72D12B56B27C0084BF2A /* Member.swift */,
-				2B4D72D32B56B29A0084BF2A /* Constants.swift */,
 				C826156B2B57E1520041463B /* Rideable.swift */,
+				2B4D72D12B56B27C0084BF2A /* Member.swift */,
+				2B4D72CF2B56206D0084BF2A /* MemberStore.swift */,
+				2B4D72D32B56B29A0084BF2A /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -132,6 +146,10 @@
 				C889AFE42B568A3900527A89 /* MapView.swift */,
 				C889AFEA2B57AE3C00527A89 /* MKMapView.swift */,
 				C889AFE82B57A92700527A89 /* setAnnotation.swift */,
+				C83DDD842B58BB8200D5E794 /* setupSearchBar.swift */,
+				C85CA5912B58FF3000B16D37 /* alertButton.swift */,
+				C85CA5932B59133200B16D37 /* halfModal.swift */,
+				C83B71D02B59E85E00A14813 /* FindRoute.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -199,6 +217,7 @@
 				C84459012B553CCE0013EE86 /* Assets.xcassets in Resources */,
 				C84459102B553DE60013EE86 /* MapView.storyboard in Resources */,
 				C84458FF2B553CCD0013EE86 /* Main.storyboard in Resources */,
+				2B4D72E12B58C0050084BF2A /* Customer.storyboard in Resources */,
 				C84459132B553DFC0013EE86 /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -213,14 +232,19 @@
 				C8AD9A7E2B554E24002B48C3 /* LoginViewController.swift in Sources */,
 				C84458FC2B553CCD0013EE86 /* ViewController.swift in Sources */,
 				C844591D2B5540880013EE86 /* MyPageViewController.swift in Sources */,
+				C85CA5922B58FF3000B16D37 /* alertButton.swift in Sources */,
 				C844591B2B553FF00013EE86 /* RegisterViewController.swift in Sources */,
 				2B4D72D22B56B27C0084BF2A /* Member.swift in Sources */,
+				C85CA5942B59133200B16D37 /* halfModal.swift in Sources */,
 				2B4D72D42B56B29A0084BF2A /* Constants.swift in Sources */,
 				C84458F82B553CCD0013EE86 /* AppDelegate.swift in Sources */,
 				C889AFEB2B57AE3C00527A89 /* MKMapView.swift in Sources */,
+				2B4D72DF2B58B7170084BF2A /* CustomerViewController.swift in Sources */,
 				C826156C2B57E1520041463B /* Rideable.swift in Sources */,
+				C83B71D12B59E85E00A14813 /* FindRoute.swift in Sources */,
 				C84458FA2B553CCD0013EE86 /* SceneDelegate.swift in Sources */,
 				C889AFE72B57A86D00527A89 /* RideData.swift in Sources */,
+				C83DDD852B58BB8200D5E794 /* setupSearchBar.swift in Sources */,
 				C889AFE92B57A92700527A89 /* setAnnotation.swift in Sources */,
 				C889AFE52B568A3900527A89 /* MapView.swift in Sources */,
 				C84459182B553F9D0013EE86 /* MapViewController.swift in Sources */,
