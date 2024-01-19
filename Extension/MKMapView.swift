@@ -33,22 +33,3 @@ extension MapViewController {
         return annotationView
     }
 }
-
-
-
-
-
-/*
- func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
- let identifier = "kickboard.jpg"
- var annotaionView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
- 
- if annotaionView == nil {
- annotaionView = MKAnnotationView(annotation: annotation, reuseIdentifier: identifier)
- annotaionView!.canShowCallout = true
- } else {
- annotaionView!.annotation = annotation
- }
- return annotaionView
- }
- */
