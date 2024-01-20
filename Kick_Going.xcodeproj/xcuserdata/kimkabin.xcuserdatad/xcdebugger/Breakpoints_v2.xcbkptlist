@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "1D45CB84-E630-4D2D-8F75-A7F380933236"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EA6405BD-6816-478D-AD75-CBA50CE46FE0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Views/MyPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
+            landmarkName = "MyPageViewController"
+            landmarkType = "21">
+            <Locations>
+               <Location
+                  uuid = "EA6405BD-6816-478D-AD75-CBA50CE46FE0 - e039d9d9a6ad4090"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kick_Going.MyPageViewController.didRegisterKickboard(name: Swift.String, number: Swift.String, latitude: Swift.Double, longitude: Swift.Double) -&gt; ()"
+                  moduleName = "Kick_Going"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimkabin/Desktop/SPARTACODING/Kick_Going1/Views/MyPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "208">
+               </Location>
+               <Location
+                  uuid = "EA6405BD-6816-478D-AD75-CBA50CE46FE0 - e039d9d9a6ad4090"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Kick_Going.MyPageViewController.didRegisterKickboard(name: Swift.String, number: Swift.String, latitude: Swift.Double, longitude: Swift.Double) -&gt; ()"
+                  moduleName = "Kick_Going"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kimkabin/Desktop/SPARTACODING/Kick_Going1/Views/MyPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "267"
+                  endingLineNumber = "267"
+                  offsetFromSymbolStart = "156">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
