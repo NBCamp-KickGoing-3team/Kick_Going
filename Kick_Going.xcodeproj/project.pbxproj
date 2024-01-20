@@ -12,7 +12,8 @@
 		2B4D72D42B56B29A0084BF2A /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72D32B56B29A0084BF2A /* Constants.swift */; };
 		2B4D72DF2B58B7170084BF2A /* CustomerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4D72DE2B58B7170084BF2A /* CustomerViewController.swift */; };
 		2B4D72E12B58C0050084BF2A /* Customer.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B4D72E02B58C0050084BF2A /* Customer.storyboard */; };
-
+		7FEE35752B5C005C0001525D /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE35742B5C005C0001525D /* DataStore.swift */; };
+		7FEE35772B5C009C0001525D /* KickboardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE35762B5C009C0001525D /* KickboardManager.swift */; };
 		C826156C2B57E1520041463B /* Rideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C826156B2B57E1520041463B /* Rideable.swift */; };
 		C83DDD852B58BB8200D5E794 /* setupSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C83DDD842B58BB8200D5E794 /* setupSearchBar.swift */; };
 		C84458F82B553CCD0013EE86 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84458F72B553CCD0013EE86 /* AppDelegate.swift */; };
@@ -42,7 +43,8 @@
 		2B4D72D32B56B29A0084BF2A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = SOURCE_ROOT; };
 		2B4D72DE2B58B7170084BF2A /* CustomerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomerViewController.swift; sourceTree = "<group>"; };
 		2B4D72E02B58C0050084BF2A /* Customer.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Customer.storyboard; sourceTree = "<group>"; };
-
+		7FEE35742B5C005C0001525D /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		7FEE35762B5C009C0001525D /* KickboardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KickboardManager.swift; sourceTree = "<group>"; };
 		C826156B2B57E1520041463B /* Rideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rideable.swift; sourceTree = "<group>"; };
 		C83DDD842B58BB8200D5E794 /* setupSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = setupSearchBar.swift; sourceTree = "<group>"; };
 		C84458F42B553CCD0013EE86 /* Kick_Going.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Kick_Going.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,7 +138,8 @@
 				2B4D72D12B56B27C0084BF2A /* Member.swift */,
 				2B4D72CF2B56206D0084BF2A /* MemberStore.swift */,
 				2B4D72D32B56B29A0084BF2A /* Constants.swift */,
-				56EC3FA92B5A4E4900321117 /* DataStore.swift */,
+				7FEE35742B5C005C0001525D /* DataStore.swift */,
+				7FEE35762B5C009C0001525D /* KickboardManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -242,10 +245,11 @@
 				2B4D72DF2B58B7170084BF2A /* CustomerViewController.swift in Sources */,
 				C826156C2B57E1520041463B /* Rideable.swift in Sources */,
 				C84458FA2B553CCD0013EE86 /* SceneDelegate.swift in Sources */,
-				56EC3FAA2B5A4E4900321117 /* DataStore.swift in Sources */,
+				7FEE35752B5C005C0001525D /* DataStore.swift in Sources */,
 				C889AFE72B57A86D00527A89 /* RideData.swift in Sources */,
 				C83DDD852B58BB8200D5E794 /* setupSearchBar.swift in Sources */,
 				C889AFE92B57A92700527A89 /* setAnnotation.swift in Sources */,
+				7FEE35772B5C009C0001525D /* KickboardManager.swift in Sources */,
 				C889AFE52B568A3900527A89 /* MapView.swift in Sources */,
 				C84459182B553F9D0013EE86 /* MapViewController.swift in Sources */,
 				2B4D72D02B56206D0084BF2A /* MemberStore.swift in Sources */,

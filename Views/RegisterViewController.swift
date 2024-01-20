@@ -19,7 +19,8 @@ class RegisterViewController: UIViewController {
         let button = UIButton()
         
         button.setTitle("킥보드 등록", for: .normal)
-        button.backgroundColor = .green
+        button.backgroundColor = .black
+        button.setTitleColor(UIColor.white, for: .normal)
         button.layer.cornerRadius = 10
         button.layer.borderWidth = 1.0
         button.layer.borderColor = UIColor.black.cgColor
@@ -97,18 +98,31 @@ class RegisterViewController: UIViewController {
     // MARK: - 데이터 전달시 델리게이트 호출
     
     private func handleRegistration(name: String, number: String, latitude: Double, longitude: Double) {
-        // 데이터를 저장하는 코드
-        let newKickboard = RegisteredKickboard(name: name, number: number)
-        DataStore.shared.saveKickboard(kickboard: newKickboard)
-        // 델리게이트를 통해 MyPageViewController에 데이터 전달
-        registrationDelegate?.didRegisterKickboard(name: name, number: number, latitude: latitude, longitude: longitude)
-        // 탭 바 컨트롤러에서 MyPageViewController 탭으로 전환
-        if let tabBarController = self.tabBarController {
-            DispatchQueue.main.async {
-                tabBarController.selectedIndex = 4
+            // 데이터를 저장하는 코드
+            let newKickboard = RegisteredKickboard(name: name, number: number)
+            
+            var newKickboard2: RideData?
+            
+            if let numberInt = Int(number) {
+                newKickboard2 = RideData(id: numberInt, title: name, subtitle: "대여가능", latitude: latitude, longitude: longitude)
             }
+            
+            // newKickboard2를 사용하기 전에 nil 여부를 확인
+            if let newKickboard2 = newKickboard2 {
+                DataStore.shared.saveKickboard(kickboard: newKickboard)
+                KickboardManager.shared.kickboardItems.append(newKickboard2)
+                // 델리게이트를 통해 MyPageViewController에 데이터 전달
+                registrationDelegate?.didRegisterKickboard(name: name, number: number, latitude: latitude, longitude: longitude)
+                
+                // 탭 바 컨트롤러에서 MyPageViewController 탭으로 전환
+                if let tabBarController = self.tabBarController {
+                    DispatchQueue.main.async {
+                        tabBarController.selectedIndex = 4
+                    }
+                }
+            }
+            print("handleRegistration함수가 성공적으로 실행되었습니다.")
         }
-    }
     
     private func showValidationErrorAlert() {
         let alert = UIAlertController(title: "입력 오류", message: "올바른 값을 입력해주세요.", preferredStyle: .alert)
