@@ -41,7 +41,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     let locationManager = CLLocationManager()
     
+    enum RentalItemType {
+        case kickboard(RideData)
+        case bicycle(RideData)
+        case none
+    }
+    
     var selectedKickboardID: Int?
+    var selectedBicycleID: Int?
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
@@ -54,6 +61,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.startUpdatingLocation()
         kickGoingMap.showsUserLocation = true
         kickGoingMap.delegate = self
+        // 지도의 중심 좌표와 줌 레벨 설정
+        let center = CLLocationCoordinate2D(latitude: 37.565534, longitude: 126.977895) // 서울 시청
+        let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+        kickGoingMap.setRegion(region, animated: true)
     }
     
     // MARK: - Methods
@@ -99,21 +110,29 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     }
     
     @IBAction func tappedButtonBorrow(_ sender: UIButton) {
-        
-        guard let selectedID = selectedKickboardID else {
-            alertButton(in: self, title: "선택된 킥보드가 없습니다." , messgae: "대여를 원하신다면 '예'를 눌러주세요.")
-            return
-        }
-        
-        if let kickboardToBorrow = kickboardItems.first(where: {$0.id == selectedID}) {
+        if let myKickboardID = selectedKickboardID, let kickboardToBorrow = kickboardItems.first(where: { $0.id == selectedKickboardID }) {
             if kickboardToBorrow.subtitle == "대여가능" {
-                print("대여하기가 신청 되었습니다.")
-                //alertButton(in: self, title: "대여하시겠습니까?", messgae: "대여를 원하신다면 '예'를 눌러주세요.")
-                showMyViewControllerInACustomizedSheet()
+                print("킥보드 대여하기가 신청되었습니다.")
+                DispatchQueue.main.async {
+                    self.buttonKickboard.backgroundColor = .green
+                    self.buttonBicycle.backgroundColor = .white
+                }
             } else {
-                alertButton(in: self, title: "이미 대여 중인 킥보드입니다.", messgae: "대여를 원하신다면 '예'를 눌러주세요.")
-                
+                alertButton(in: self, title: "이미 대여 중인 킥보드입니다.", messgae: "대여를 원하신다면 '네'를 눌러주세요.")
             }
+        } else if let myBicylceID = selectedBicycleID, let bicycleToBorrow = bicycleItems.first(where: {$0.id == selectedBicycleID}) {
+            if bicycleToBorrow.subtitle == "대여가능" {
+                print("자전거 대여하기가 신청되었습니다.")
+                DispatchQueue.main.async {
+                    self.buttonBicycle.backgroundColor = .green
+                    self.buttonKickboard.backgroundColor = .white
+                }
+            } else {
+                alertButton(in: self, title: "이미 대여 중인 자전거입니다.", messgae: "대여를 원하신다면 '네'를 눌러주세요.")
+            }
+        } else {
+            let notSelectedMessage = "선택된 킥보드 또는 자전거가 없습니다."
+            alertButton(in: self, title: notSelectedMessage, messgae: "대여를 원하신다면 '네'를 눌러주세요.")
         }
     }
     
