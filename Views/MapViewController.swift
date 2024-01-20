@@ -122,6 +122,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         removeAnnotationsFromMap()
         
+        kickboardItems += KickboardManager.shared.kickboardItems
         let dataSource = kickboardItems
         for kickboard in dataSource {
             setAnnotation(title: kickboard.title, subtitle: kickboard.subtitle, latitudeValue: kickboard.latitude, longitudeValue: kickboard.longitude, delta: 0.01)
