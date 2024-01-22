@@ -16,7 +16,7 @@
 
 <br><br>
 ## 🖋️ 프로젝트 결과물 <p>
-
+https://www.youtube.com/watch?v=EQ7UVij3Hu8&t=70s
 
 
 <br><br><br>
