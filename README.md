@@ -16,11 +16,25 @@
 <br><br>
 ## 🛠️ 사용한 기술 스택 <p>
 <img src=https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png>
+<img width="919" alt="스크린샷 2024-01-22 오후 5 17 44" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/a3770d60-3abc-4ea8-81fb-bb8ba9e89ffa">
+
+<br><br>
+## 🛠️ 구현 기능별 코드 <p>
+<img width="907" alt="스크린샷 2024-01-22 오후 5 17 55" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/c8bed6c6-ed26-4634-b848-eb87276ad8a1">
+<img width="902" alt="스크린샷 2024-01-22 오후 5 18 03" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/1d52c729-0846-4220-aefd-699fc7e6b1de">
+<img width="890" alt="스크린샷 2024-01-22 오후 5 18 09" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/a7a89450-bee8-4c71-bc75-67be28747797">
+<img width="883" alt="스크린샷 2024-01-22 오후 5 18 16" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/19b82d73-06c0-4ebc-ae12-bf262aac1fdd">
 
 
 <br><br>
 ## 🖋️ 프로젝트 결과물 <p>
-
+<img width="304" alt="스크린샷 2024-01-22 오후 5 21 06" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/85fc10c5-ceac-4252-9b3e-5ebcd490e65b">
+<img width="307" alt="스크린샷 2024-01-22 오후 5 21 19" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/560400a9-4ddf-4472-a43a-c5abb659565e">
+<img width="305" alt="스크린샷 2024-01-22 오후 5 21 34" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/98269dd4-0645-4db1-ac3c-f6f8c0e5f7d2">
+<img width="307" alt="스크린샷 2024-01-22 오후 5 21 42" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/ff404c4e-bfb2-4fc2-8b72-1f2ca8a111f0">
+<img width="307" alt="스크린샷 2024-01-22 오후 5 21 51" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/60184f92-cf0e-43a1-bdfa-d5b546ab81d2">
+<img width="304" alt="스크린샷 2024-01-22 오후 5 21 58" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/0bfc673a-f33a-4f99-a870-d8f1eaa03aff">
+<img width="304" alt="스크린샷 2024-01-22 오후 5 22 06" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/55e37fed-a9b1-4ce6-bace-f7c7a9d37305">
 
 
 <br><br><br>
