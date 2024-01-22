@@ -28,13 +28,7 @@
 
 <br><br>
 ## 🖋️ 프로젝트 결과물 <p>
-<img width="304" alt="스크린샷 2024-01-22 오후 5 21 06" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/85fc10c5-ceac-4252-9b3e-5ebcd490e65b">
-<img width="307" alt="스크린샷 2024-01-22 오후 5 21 19" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/560400a9-4ddf-4472-a43a-c5abb659565e">
-<img width="305" alt="스크린샷 2024-01-22 오후 5 21 34" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/98269dd4-0645-4db1-ac3c-f6f8c0e5f7d2">
-<img width="307" alt="스크린샷 2024-01-22 오후 5 21 42" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/ff404c4e-bfb2-4fc2-8b72-1f2ca8a111f0">
-<img width="307" alt="스크린샷 2024-01-22 오후 5 21 51" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/60184f92-cf0e-43a1-bdfa-d5b546ab81d2">
-<img width="304" alt="스크린샷 2024-01-22 오후 5 21 58" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/0bfc673a-f33a-4f99-a870-d8f1eaa03aff">
-<img width="304" alt="스크린샷 2024-01-22 오후 5 22 06" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/55e37fed-a9b1-4ce6-bace-f7c7a9d37305">
+https://www.youtube.com/watch?v=EQ7UVij3Hu8&t=70s
 
 
 <br><br><br>
