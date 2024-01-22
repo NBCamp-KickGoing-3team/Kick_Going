@@ -16,6 +16,14 @@
 <br><br>
 ## 🛠️ 사용한 기술 스택 <p>
 <img src=https://developer.apple.com/assets/elements/icons/swiftui/swiftui-96x96_2x.png>
+<img width="919" alt="스크린샷 2024-01-22 오후 5 17 44" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/a3770d60-3abc-4ea8-81fb-bb8ba9e89ffa">
+
+<br><br>
+## 🛠️ 구현 기능별 코드 <p>
+<img width="907" alt="스크린샷 2024-01-22 오후 5 17 55" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/c8bed6c6-ed26-4634-b848-eb87276ad8a1">
+<img width="902" alt="스크린샷 2024-01-22 오후 5 18 03" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/1d52c729-0846-4220-aefd-699fc7e6b1de">
+<img width="890" alt="스크린샷 2024-01-22 오후 5 18 09" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/a7a89450-bee8-4c71-bc75-67be28747797">
+<img width="883" alt="스크린샷 2024-01-22 오후 5 18 16" src="https://github.com/NBCamp-KickGoing-3team/Kick_Going/assets/144803017/19b82d73-06c0-4ebc-ae12-bf262aac1fdd">
 
 
 <br><br>
